@@ -1,0 +1,27 @@
+h1, div {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+.main-container {
+  position: relative;
+  border-radius: 10px;
+  margin: 10px auto 0;
+  z-index: 0;
+  clear: both;
+  width: 100%;
+}
+
+.title-g {
+  width: 100%;
+  font-size: 22px;
+  padding: 10px 0 25px;
+  line-height: 33px;
+  position: relative;
+  text-align: center;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+}

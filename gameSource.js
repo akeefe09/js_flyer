@@ -49,8 +49,9 @@ window.onload = function() {
       ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
       ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap);
       pipe[i].x-=2;
-
-      if(pipe[i].x === 150) {
+        // need to allow for speed changes
+          // need to adjust x-= and the if condition
+      if(pipe[i].x === 140) {
         pipe.push({
           x: screen.width,
           y: Math.floor(Math.random()*300)
