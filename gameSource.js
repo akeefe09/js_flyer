@@ -30,11 +30,11 @@ window.onload = function() {
 
   let heliX = 10;
   let heliY = 200;
-  let fallRate = 3;
+  let fallRate = 2;
 
   document.addEventListener("keydown", moveUp);
   function moveUp() {
-    heliY -= 50;
+    heliY -= 40;
   }
 
   let pipe = [];
@@ -48,6 +48,14 @@ window.onload = function() {
     for (let i = 0; i < pipe.length; i++) {
       ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
       ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap);
+      pipe[i].x-=2;
+
+      if(pipe[i].x === 150) {
+        pipe.push({
+          x: screen.width,
+          y: Math.floor(Math.random()*300)
+        });
+      }
     }
     ctx.drawImage(heliImage, heliX, heliY);
     heliY += fallRate;
