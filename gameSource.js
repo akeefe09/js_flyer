@@ -15,14 +15,15 @@ window.onload = function() {
   var pipeBottom = new Image();
   pipeBottom.src = "images/pipebottom.png";
 
-  var CloudFunction = function() {
-    var cloud = {
+  let CloudFunction = function() {
+    let cloud = {
       X: Math.random() * width,
       Y: Math.random() * height,
       cloudImg: new Image(),
     };
     cloud.cloudImg.src = ("images/cloud" + Math.floor(Math.random()*2) + ".png")
   }
+
 
   const space = 100;
   let gap = 242 + space;
@@ -31,10 +32,23 @@ window.onload = function() {
   let heliY = 200;
   let fallRate = 3;
 
+  document.addEventListener("keydown", moveUp);
+  function moveUp() {
+    heliY -= 50;
+  }
+
+  let pipe = [];
+  pipe[0] = {
+    x: screen.width,
+    y: 0
+  }
+
   function draw() {
     ctx.drawImage(background, 0, 0);
-    ctx.drawImage(pipeTop, 200, 0);
-    ctx.drawImage(pipeBottom, 200, 0+gap);
+    for (let i = 0; i < pipe.length; i++) {
+      ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
+      ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap);
+    }
     ctx.drawImage(heliImage, heliX, heliY);
     heliY += fallRate;
     requestAnimationFrame(draw);
