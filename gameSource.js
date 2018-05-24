@@ -25,7 +25,7 @@ window.onload = function() {
   }
 
 
-  const space = 100;
+  const space = 120;
   let gap = 242 + space;
 
   let heliX = 10;
@@ -54,8 +54,13 @@ window.onload = function() {
       if(pipe[i].x === 140) {
         pipe.push({
           x: screen.width,
-          y: Math.floor(Math.random()*300)
+          y: Math.floor(Math.random()*250)
         });
+      }
+
+      if(heliX + 75 >= pipe[i].x && heliX <= pipe[i].x + 52 &&
+        (heliY <= pipe[i].y + 242 || heliY+30 >= pipe[i].y + gap)) {
+          location.reload();
       }
     }
     ctx.drawImage(heliImage, heliX, heliY);
