@@ -43,6 +43,8 @@ window.onload = function() {
     y: 0
   }
 
+  let distance = 0;
+
   function draw() {
     ctx.drawImage(background, 0, 0);
     for (let i = 0; i < pipe.length; i++) {
@@ -54,17 +56,28 @@ window.onload = function() {
       if(pipe[i].x === 140) {
         pipe.push({
           x: screen.width,
-          y: Math.floor(Math.random()*250)
+          y: Math.floor(Math.random()*150)
         });
       }
 
       if(heliX + 75 >= pipe[i].x && heliX <= pipe[i].x + 52 &&
-        (heliY <= pipe[i].y + 242 || heliY+30 >= pipe[i].y + gap)) {
+        (heliY <= pipe[i].y + 242 || heliY+30 >= pipe[i].y + gap) ||
+        heliY >= 500) {
+          distance = 0;
           location.reload();
       }
+
+      if(pipe[i].x === 10) {
+        distance += 1;
+      }
     }
+
     ctx.drawImage(heliImage, heliX, heliY);
     heliY += fallRate;
+    ctx.fillStyle = "#000";
+    ctx.font = "20px Verdana";
+    ctx.fillText("Distance: "+distance, 20, 480)
+
     requestAnimationFrame(draw);
   }
 
