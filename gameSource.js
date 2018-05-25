@@ -1,3 +1,5 @@
+// dom content loaded event listener
+// draw modal on canvas with button for start/settings
 
 window.onload = function() {
   var screen = document.getElementById("canvas");
@@ -48,11 +50,6 @@ window.onload = function() {
   function draw() {
     ctx.drawImage(background, 0, 0);
 
-    // ctx.fillStyle="blue"
-    // ctx.fillRect(0,0,0,0);
-    // ctx.globalAlpha=0.5;
-
-
     for (let i = 0; i < pipe.length; i++) {
       ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y - 150);
       ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap - 150);
@@ -87,7 +84,7 @@ window.onload = function() {
 
     requestAnimationFrame(draw);
   }
-
+  // requestAnimationFrame(draw);
   draw();
 
 }
