@@ -10,9 +10,9 @@ body {
 }
 
 canvas {
-
   -webkit-box-shadow: 3px 3px 5px 6px black;
   box-shadow:         3px 3px 5px 6px black;
+  border-radius: 5px;
 }
 
 .main-container {
@@ -37,10 +37,48 @@ canvas {
   margin: 0;
 }
 
+.game-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.game-bio {
+  font-size: 12px;
+}
+
 .title-container {
   padding-bottom: 20px;
 }
 
 .links-container {
   padding: 20px;
+}
+
+.link-a {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+span {
+  -webkit-transition: all 0.5;
+  transition: all 0.5;
+}
+
+.Git:hover {
+  background: url("https://i.imgur.com/NzCthbV.png") center no-repeat;
+  opacity: 0.5;
+  background-size: contain;
+}
+
+.LinkedIn:hover {
+  background: url("https://www.shareicon.net/data/128x128/2017/06/28/888033_logo_512x512.png") center no-repeat;
+  opacity: 0.5;
+  background-size: 90%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
