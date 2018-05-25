@@ -7,7 +7,7 @@ window.onload = function() {
   heliImage.src = "images/helicopter.png";
 
   var background = new Image();
-  background.src = "images/background.jpg";
+  background.src = "images/background0.jpg";
 
   var pipeTop = new Image();
   pipeTop.src = "images/pipetop.png";
@@ -47,9 +47,15 @@ window.onload = function() {
 
   function draw() {
     ctx.drawImage(background, 0, 0);
+
+    // ctx.fillStyle="blue"
+    // ctx.fillRect(0,0,0,0);
+    // ctx.globalAlpha=0.5;
+
+
     for (let i = 0; i < pipe.length; i++) {
-      ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
-      ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap);
+      ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y - 150);
+      ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + gap - 150);
       pipe[i].x-=2;
         // need to allow for speed changes
           // need to adjust x-= and the if condition
@@ -61,7 +67,7 @@ window.onload = function() {
       }
 
       if(heliX + 75 >= pipe[i].x && heliX <= pipe[i].x + 52 &&
-        (heliY <= pipe[i].y + 242 || heliY+30 >= pipe[i].y + gap) ||
+        (heliY <= pipe[i].y + 242 - 150 || heliY+30 >= pipe[i].y + gap - 150) ||
         heliY >= 500) {
           distance = 0;
           location.reload();
@@ -74,9 +80,10 @@ window.onload = function() {
 
     ctx.drawImage(heliImage, heliX, heliY);
     heliY += fallRate;
-    ctx.fillStyle = "#000";
-    ctx.font = "20px Verdana";
-    ctx.fillText("Distance: "+distance, 20, 480)
+
+    ctx.fillStyle = "white";
+    ctx.font = "24px Arial";
+    ctx.fillText("Streak: " + distance, 20, 480)
 
     requestAnimationFrame(draw);
   }

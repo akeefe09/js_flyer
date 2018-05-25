@@ -1,7 +1,18 @@
 h1, div {
   font-family: 'Open Sans', sans-serif;
+  color: white;
   height: 100%;
   margin: 0;
+}
+
+body {
+  background: url("https://i.imgur.com/yNixJ0z.jpg") center no-repeat;
+}
+
+canvas {
+
+  -webkit-box-shadow: 3px 3px 5px 6px black;
+  box-shadow:         3px 3px 5px 6px black;
 }
 
 .main-container {
@@ -24,4 +35,12 @@ h1, div {
   font: inherit;
   vertical-align: baseline;
   margin: 0;
+}
+
+.title-container {
+  padding-bottom: 20px;
+}
+
+.links-container {
+  padding: 20px;
 }
