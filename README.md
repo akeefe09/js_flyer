@@ -1,20 +1,15 @@
 # js_flyer
-This will be a runner-style game, similar to Flappy Bird. Users will need to guide a flying object through obstacles.
+An endless runner-style game. Users must try to guide a flying object through obstacles. The helicopter can be made to move up with any key.
 
-**Functionality & MVP**
-users should be able to
-- control the flight of the object
-- gain points the farther they get
+The more obstacles you pass, the more your streak grows.
 
 **Wireframes**
-The game will take place in a canvas window, with a title and links to my personal information/github above.
+The game takes place in a canvas window.
 
 https://i.imgur.com/nf216gV.png
 
 **Technologies**
-The game will be implemented with JavaScript and Canvas.
-
-There will likely need to be separate files for the game logic, the flying object, and the obstacles.
+The game is implemented with JavaScript and Canvas.
 
 **Timeline**
 Day 1: try to relearn how Canvas works, figure out how to get the basic outline of the project setup.
