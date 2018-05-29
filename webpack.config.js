@@ -1,9 +1,9 @@
 module.exports = {
   mode: 'development',
-  entry: "./lib/main.js",
+  entry: "./lib/gameSource.js",
   output: {
     path: __dirname,
-    filename: "./lib/great_query.js"
+    filename: "./lib/bundle.js"
   },
   devtool: "source-map"
 };
